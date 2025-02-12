@@ -9,7 +9,7 @@ let to = args[1];
 export let flag: boolean = false;
 
 if (args[2] !== undefined) {
-  if (args[2].toLowerCase() === "true") flag = true;
+  if (args[2].toLowerCase() === "prod") flag = true;
 }
 
 if (!from || !to) {

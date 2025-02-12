@@ -77,7 +77,10 @@ export default async function fetchFromErp(
 
   for (let i = 0; i < length; i++) {
     const data = queryData[i];
-    if (data.status != "COMPLETED" || data.timeState.length == 0) {
+    if (
+      (data.status != "COMPLETED" && data.status != "FAILED") ||
+      data.timeState.length == 0
+    ) {
       count++;
       notCompleted.push(data._id);
       continue;
